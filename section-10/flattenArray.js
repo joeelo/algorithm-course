@@ -8,7 +8,6 @@ let flattenArray = (arr) => {
 
     for (let i = 0; i < arr.length; i++) {
         if (typeof arr[i] === "object") {
-            console.log(...flattenArray(arr[i]))
             flat.push(...flattenArray(arr[i]))
         } else {
             flat.push(arr[i]);
@@ -20,3 +19,15 @@ let flattenArray = (arr) => {
 
 flattenArray(arr);
 // console.log(flattenArray(arr));
+
+//Without spread operator on line 12 
+// [ 7, 9 ]
+// [ 3 ]
+// [ 9, 9, 3 ]
+// [ 3 ]
+
+// With spread operator on line 12
+// 7 9
+// 3
+// 9 9 3
+// 3
