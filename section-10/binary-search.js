@@ -30,3 +30,24 @@ function binarySearch(arr, value) {
 }
 
 console.log(binarySearch(firstArray, 22));
+
+
+// The worst case scenario is 0(log n) and the best case is 0(1)
+
+// Different way of writing a binarySearch
+// function binarySearch(arr, target) {
+//     let left = 0;
+//     let right = arr.length - 1;
+//     while (left <= right) {
+//         const mid = left + Math.floor((right - left) / 2);
+//         if (arr[mid] === target) {
+//             return mid;
+//         }
+//         if (arr[mid] < target) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+//     return -1;
+// }
