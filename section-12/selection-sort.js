@@ -29,3 +29,8 @@ function selectionSort(arr){
 }
 
 selectionSort(arr1);
+
+// There is only one scenario in which selection sort is better than bubble sort
+// If for some reason you're worried about memory selection sort is better 
+
+// THE BIG O OF SELECTION SORT IS O(n) Squared
