@@ -1,7 +1,7 @@
 const arr1 = [2, 1, 4, 10, 9, 3 ];
 
 function bubbleSort(arr) {
-    let noSwaps
+    let noSwaps;
     for (let i = arr.length; i > 0; i--) {
         for (let j = 0; j < i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
