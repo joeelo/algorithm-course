@@ -19,3 +19,6 @@ newStack.shift();
 // The functionality is the exact same but putting items at the beginning of the array 
 // and if you put it at the beginning of the array you need to pop it off the stack at the beginning
 // hence the use of shift and unshift.
+
+// Pushing and popping is far more effecient that shifting and unshifting
+// this is because if you remove or add to the front the whole array must be re-indexed.
