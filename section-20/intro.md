@@ -24,3 +24,15 @@
     - Set the previous property on the newly created node to be the tail. 
     - Increment the length.
     - Return the Doubly Linked List aka Doubly.
+
+## Pop psuedocode
+
+    - If there is no head or no tail return undefined.
+    - Store the current tail in a variable to return later.
+    - If the length is 1, set the head and the tail to be null.
+    - Update the tail to be the previous node. 
+    - Set the new Tails next to null.
+    - Decrement the length.
+    - Return the value removed.
+
+    - ## When you sever the bond between the tail and the previous, you must set the previous of the former tail to null as well, there may be no reference or pointers available after it is popped off the list. 
