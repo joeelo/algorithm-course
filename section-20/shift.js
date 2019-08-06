@@ -46,13 +46,32 @@ class Doubly {
         return returnedNode;
     }
 
+    shift() {
+        let returnedHead;
+        if (this.length === 0) return undefined;
+        if (this.length === 1) {
+            returnedHead = this.head;
+            this.head = null;
+            this.tail = null;
+        } else {
+            returnedHead = this.head;
+            this.head = this.head.next;
+            returnedHead.next = null;
+            this.head.prev = null;
+        }
+
+        this.length--;
+        return returnedHead;
+    }
+
 }
 
 let list = new Doubly;
 list.push(3);
 list.push(5);
 list.push(19);
-// list.pop();
+// list.shift();
 
 
+console.log(list.shift());
 console.log(list);

@@ -36,3 +36,24 @@
     - Return the value removed.
 
     - ## When you sever the bond between the tail and the previous, you must set the previous of the former tail to null as well, there may be no reference or pointers available after it is popped off the list. 
+
+    - ## Popping from the end of a doubly is much more efficient than the end of a singly because again we do not have to traverse the entire list to find the reference to the previous node to the tail.
+
+## Shift psuedocode
+
+    - If length is 0 return undefined.
+    - Store the current head property in a variable.
+    - If the length is one.
+        - Set the head to be null.
+        - Set the tail to be null.
+    - Update the head to be the next of the old head. 
+    - Set the head's prev property to null.
+    - Set the old head's next to null.
+    - Decrement the length.
+    - Return the old head
+
+    _________           _________
+    |       |           |       |
+    |   3   | ------>   |   5   |   = we must remove 3, set the new head to 5, 
+    |       | <------   |       |   make the node with 5's prev set to null
+    _________           _________   and the formerly included node with 3's next also set to null
