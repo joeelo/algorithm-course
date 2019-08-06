@@ -1,0 +1,3 @@
+- What is a Queue? 
+    - A queue is similar to a stack but instead of LIFO it's FIFO (First in First out)
+    - 
