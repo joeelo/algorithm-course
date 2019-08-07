@@ -69,16 +69,10 @@ class Doubly {
         if (this.length === 0) {
             this.head = node;
             this.tail = node;
-        } else if (this.length === 1){
-            this.tail = this.head;
-            this.head = node;
-            node.next = this.tail;
-            this.tail.prev = this.head;
         } else {
-            let temp = this.head;
+            this.head.prev = node;
+            node.next = this.head;
             this.head = node;
-            node.next = temp;
-            temp.prev = node;
         }
         this.length++;
         return this;
