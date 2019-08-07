@@ -64,14 +64,37 @@ class Doubly {
         return returnedHead;
     }
 
+    unshift(val) {
+        let node = new Node(val)
+        if (this.length === 0) {
+            this.head = node;
+            this.tail = node;
+        } else if (this.length === 1){
+            this.tail = this.head;
+            this.head = node;
+            node.next = this.tail;
+            this.tail.prev = this.head;
+        } else {
+            let temp = this.head;
+            this.head = node;
+            node.next = temp;
+            temp.prev = node;
+        }
+        this.length++;
+        return this;
+         
+    }
+
 }
 
 let list = new Doubly;
-list.push(3);
-list.push(5);
-list.push(19);
+// list.push(3);
+// list.push(5);
+// list.push(19);
 // list.shift();
 
+list.unshift("harry");
+list.unshift("ron");
+list.unshift("hermione");
 
-console.log(list.shift());
 console.log(list); 

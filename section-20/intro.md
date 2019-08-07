@@ -57,3 +57,10 @@
     |   3   | ------>   |   5   |   = we must remove 3, set the new head to 5, 
     |       | <------   |       |   make the node with 5's prev set to null
     _________           _________   and the formerly included node with 3's next also set to null
+
+## Unshift psuedocode
+
+    - If the length is 0 set the tail and the head to the new node.
+    - Set the head to equal the value of the new node, the new head's value should be the old head. 
+    - The value of the old head should now have a prev pointer pointing to the new head. 
+    - Return the Doubly Linked List aka Doubly.
