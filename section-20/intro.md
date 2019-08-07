@@ -74,5 +74,13 @@
     - If the greater than half the length of the list.
         - Loop through the list starting from the tail and loop towards the middle.
         - Return the node once it is found. 
+   #### In order to do this, set a count variable, and as long as the count isn't the index, set the node to the next node or prev node depending on conditional. If the count is the index, then return that node which is current.
 
-        
+## Set psuedocode
+
+    - Create a varibale which is the result of the get method at the index passed to the function.
+    - If the get method returns a valid node, set the value of that node to be the value passed to the function.
+        - Return true.
+        - Otherwise, return false 
+    
+
