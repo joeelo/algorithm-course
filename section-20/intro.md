@@ -64,3 +64,15 @@
     - Set the head to equal the value of the new node, the new head's value should be the old head. 
     - The value of the old head should now have a prev pointer pointing to the new head. 
     - Return the Doubly Linked List aka Doubly.
+
+## Get psuedocode
+
+    - If the index is less than - or greater or equal to the length, return null.
+    - If the index is less than or equal to half the length of the list.
+        - Loop through the list starting from the head and loop towards the middle.
+        - Return the node once it is found.
+    - If the greater than half the length of the list.
+        - Loop through the list starting from the tail and loop towards the middle.
+        - Return the node once it is found. 
+
+        
