@@ -92,5 +92,23 @@
     Set the next and prev properties on the correct nodes to link everything together. 
     - Increment the length.
     - Return true.
+
+## Remove Psuedocode
+
+    - If the index is less than zero or greater than or equal to the length return undefined.
+    - If the index is 0, shift.
+    - If the index is the length - 1, pop.
+    - Use the get metod to retrieve the item to be removed. 
+    - Update the next and prev properties to remove the found node from the list. 
+    - Set next and prev to null on the found node. 
+
+
+# BIG O of Doubly Linked List
+
+    - Insertion - 0(1)
+    - Removal - 0(1)
+    - Searching - 0(N)
+    - Access - 0(N)
+        - Technically searching is o(N / 2), but that's still 0(N)
     
 
