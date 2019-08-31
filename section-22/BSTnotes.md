@@ -34,7 +34,15 @@
             - Check to see if there is a node to the left 
                 - If there is, move to that node and repeat these steps. 
                 - If there is not, then we're done searching! 
-                
+
+## Big O of Binary Search Tree
+
+    - Insertion - O(log n)
+    - Searching - O(log n)
+
+    - It is not guaranteed that the methods will run O(log n ) and that is because it is contigent on the configuration of the tree. Some trees don't need to be BST's but are still completely valid, and wind up looking more like a linked list. If this is the case the best thing to do is to reconfigure the tree, possibly picking a different root so the tree evens out. 
+
+
 
 
 
