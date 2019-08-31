@@ -29,10 +29,11 @@ class Doubly {
 
 }
 
-let first = new Doubly;
-first.push(3);
-first.push(5);
-first.push(19);
+let doubly = new Doubly;
 
-console.log(first);
+doubly.push("Harry");
+doubly.push("ron");
+
+
+console.log(doubly);
 

@@ -154,8 +154,9 @@ list.push(5);
 list.push(19);
 list.unshift("harry");
 list.unshift("ron");
-list.unshift("hermione");
-list.remove(1);
+list.push("hermione");
+list.push("Draco");
 
-console.log(list);
+
+console.log(list.pop());
 
