@@ -49,12 +49,41 @@
 
 #### Post-order psuedo-code
     - Create a variable to store the value of the nodes visited. 
-    - Store the root of the BST in a variable called current. 
+    - Store the root of the BST in a variable called current or root. 
     - Write a helper function which accepts a node. 
         - If the node has a left property call the helper function with the left property on that node. 
         - If the node has a right property call the helper function with the right property on that node. 
         - Push the value of the node to the variable that stores those values. 
-        - Invoke the helper function with the current variable. 
+    - Invoke the helper function with the current variable. 
 
 #### Pre-Post difference 
     - In the Pre order, you push as the recursion takes place, so as the stack expands you push every value for the left then the right in a vertical manner. For the Post order it's necessary to make it down to the bottom of the tree, then push to data, and as things are popped off the stack they'll be added to the data variable. 
+
+### Depth First Search In-Order
+
+    - Similar to the other two, this one orders them in terms of values, because if it's a proper Binary Search Tree then the smallest values will be on the left, and the larger on the right and this takes advantage of that fact. 
+
+#### In-Order psuedo-code
+
+    - Create a varibale to store the value of the nodes visited. 
+    - Store the root of the BST in a variable called current or root.
+    - Write a helper function which accepts a node. 
+        - If the node has a left property, call the helper function with the left property on the node. 
+        - Push the value of the node to the variable that stores the values. 
+        - If the node has a right property, call the helper function with the right property on the node. 
+    - Invoke the helper function with the current variable. 
+
+## When to use Breadth First vs Depth first
+
+    - The time complexity of Depth first and Breadth first are the same. Breadth first takes more space however because of the nodes being stored in the queue. 
+    - If the tree isn't too wide you can use Breadth First because there is essentially nothing being saved. The depth first does take up space however in the recursive sense saving each function in the stack until the end. 
+#### Using different variants of Depth First
+
+    - There isn't a great answer, However there are a few cases. 
+    - In order is obviously good if you want the data to be organized in a certain manner, going from highest to lowest or vice versa. 
+    - Pre Order is good if you want to export the tree, it can be easily reconstructed or copied, because all of the data is exactly where it should be on the tree. You immediately know what the root of the tree is. 
+
+## RECAP 
+    - Trees are non-linear data structures that contain a root and child nodes. 
+    - Binary trees can have a value of any type, but at most two children for each parent. 
+    - Binary Search trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater. 
