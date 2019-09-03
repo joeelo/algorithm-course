@@ -42,3 +42,19 @@
 
 #### Why do it recursively? How it works
     - The first thing that happens is there is a call for the helper method on the root, which is the variable current, could also be done just calling DFSHelper(this.root), but current seemed more explicit. The root does indeed have a left, and so the method is called again on itself, until there is no left property remaining. Then there goes to the right, and that is added to the stack until you work your way all the way down the tree. 
+
+### Depth First Search Post-Order 
+    - This is almost identical to the pre-order 
+    - The difference is we're not pushing a node and checking, we're checking if it has a property and then going down into that node and then pushing to the data. So instead of the tree working from the top down, the data should be represented from the bottom up. 
+
+#### Post-order psuedo-code
+    - Create a variable to store the value of the nodes visited. 
+    - Store the root of the BST in a variable called current. 
+    - Write a helper function which accepts a node. 
+        - If the node has a left property call the helper function with the left property on that node. 
+        - If the node has a right property call the helper function with the right property on that node. 
+        - Push the value of the node to the variable that stores those values. 
+        - Invoke the helper function with the current variable. 
+
+#### Pre-Post difference 
+    - In the Pre order, you push as the recursion takes place, so as the stack expands you push every value for the left then the right in a vertical manner. For the Post order it's necessary to make it down to the bottom of the tree, then push to data, and as things are popped off the stack they'll be added to the data variable. 
