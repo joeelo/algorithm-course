@@ -87,3 +87,4 @@
     - Trees are non-linear data structures that contain a root and child nodes. 
     - Binary trees can have a value of any type, but at most two children for each parent. 
     - Binary Search trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater. 
+    - We can search through trees using BFS or DFS and it's variants. 
