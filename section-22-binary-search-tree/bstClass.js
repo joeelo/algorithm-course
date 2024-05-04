@@ -74,6 +74,26 @@ class BST {
 
     return false
   }
+
+  // Inverting a tree has no practical applications but comes up during interviews often. 
+  // Given the root, reverse the left and right nodes. We can do this recursively
+  // First by working on the left subtree, then the right subtree.  
+  // Save the left root since you're about to overwrite, 
+  // Then make the left of the root, the right, and then assign the right to the saved variable 
+  invert(root) {
+    if (!root) {
+      return
+    }
+
+    const temp = root.left
+    root.left = root.right 
+    root.right = temp 
+
+    this.invert(root.left)
+    this.invert(root.right)
+
+    return root
+  }
 }
 
 const node1 = new Node(3)
@@ -94,6 +114,5 @@ Tree.insert(node5)
 Tree.insert(node6)
 Tree.insert(node7)
 
-const foundNode = Tree.search(3)
-
-console.log(foundNode);
+Tree.invert(node1)
+console.log(Tree)
