@@ -19,10 +19,7 @@ class BST {
     } else {
       let current = this.root
       while (true) {
-        if (value === current.value) {
-          return
-        }
-
+        if (value === current.value) return undefined
         if (value < current.value) {
           if (current.left === null) {
             current.left = newNode
@@ -45,14 +42,10 @@ class BST {
   }
 
   find(value) {
-    if (this.root === null) {
-      return
-    }
-
+    if (this.root === null) return -1
     if (value === this.root.value) {
       return this.root
     }
-
     let current = this.root
     while (true) {
       if (value === current.value) {
@@ -71,50 +64,39 @@ class BST {
     }
   }
 
-  BFS(node) {
-    if (!this.root) {
-      return []
-    }
+  BFS() {
+    const data = []
+    const queue = []
 
-    const q = [this.root] // Supposed to be queue but that's tough to spell right every time
-    const values = []
+    if (this.root === null) return undefined
+    let node = this.root
+    queue.push(this.root)
 
-    while (q.length) {
-      const node = q.shift()
-
+    while (queue.length !== 0) {
+      node = queue.shift()
+      data.push(node)
       if (node.left) {
-        q.push(node.left)
+        queue.push(node.left)
+      } else if (node.right) {
+        queue.push(node.right)
       }
-
-      if (node.right) {
-        q.push(node.right)
-      }
-
-      values.push(node.value)
     }
 
-    return values
+    return data
+  }
+
+  DFSPreOrder() {
+    const data = []
+
+    return data
   }
 }
 
-const Tree = new BST()
+const tree = new BST()
 
-Tree.insert(10)
-Tree.insert(6)
-Tree.insert(15)
-Tree.insert(3)
-Tree.insert(8)
-Tree.insert(20)
-
-const BFSResult = Tree.BFS()
-console.log(BFSResult)
-
-// Tree looks like
-/**
- * 						5
- * 				3				7
- * 			2		4					9
- * 											11
- * 													17
- *
- */
+tree.insert(30)
+tree.insert(15)
+tree.insert(45)
+tree.insert(60)
+tree.insert(55)
+tree.insert(7)
