@@ -68,3 +68,5 @@ list.shift();
 list.shift();
 list.push(100);
 console.log(list)
+
+export {}
