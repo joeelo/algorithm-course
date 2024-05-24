@@ -47,9 +47,9 @@
       rowIndex += 1
     }
 
-    // if (columnIndex < columnsToTraverse && rowIndex === rowsToTraverse) {
-    //   columnIndex += 1
-    // }
+    if (columnIndex < columnsToTraverse && rowIndex === rowsToTraverse) {
+      columnIndex += 1
+    }
 
     counter++ 
   }
