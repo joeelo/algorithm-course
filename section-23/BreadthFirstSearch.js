@@ -1,3 +1,4 @@
+// @ts-nocheck
 class Node {
   constructor(value) {
     this.value = value
@@ -76,7 +77,8 @@ class BST {
       return []
     }
 
-    const q = [this.root] // Supposed to be queue but that's tough to spell right every time
+    // Supposed to be queue but that's tough to spell right every time
+    const q = [this.root] 
     const values = []
 
     while (q.length) {
