@@ -32,17 +32,74 @@ class Graph {
       this.adjacencyList[key] = this.adjacencyList[key].filter((v) => v !== vertex)
     }
   }
+
+  dfsRecursive(vertex) {
+    const list = []
+    // visited is needed to keep track of what vertex' were visited, without this we would find ourselves in an infinite loop because it would go around in circles forever populating with the vertex' neighbors pushing to the list 
+    const visited = {} 
+    const adjacencyList = this.adjacencyList
+    
+    function dfs(v) {
+      if (visited[v] || !v) {
+        return 
+      } else {
+        visited[v] = true 
+        list.push(v)
+
+        const neighbors = adjacencyList[v]
+        
+        neighbors.forEach((n) => dfs(n))
+        
+        return 
+      }
+    } 
+
+    dfs(vertex)
+
+    return list
+  }
+
+  dfsIterative(vertex) {
+    const stack = [vertex]
+    const resultsList = []
+    const visited = {}
+
+    while(stack.length) {
+      const currentVertex = stack.pop() 
+
+      if (!visited[currentVertex]) {
+        resultsList.push(currentVertex)
+      }
+
+      visited[currentVertex] = true 
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          stack.push(neighbor)
+        }
+      })
+    }
+
+    return resultsList
+  }
 }
 
 const g = new Graph() 
-g.addVertex('San Diego')
-g.addVertex('Tokyo')
-g.addVertex('New York')
+g.addVertex('A')
+g.addVertex('B')
+g.addVertex('C')
+g.addVertex('D')
+g.addVertex('E')
+g.addVertex('F')
 
-g.addEdge('San Diego', 'Tokyo')
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
 
-g.addEdgeDirected('New York', 'Tokyo')
-
-g.removeEdge('San Diego', 'Tokyo')
-g.removeVertex('Tokyo')
-console.log(g)
+// g.dfsRecursive("A")
+const list = g.dfsIterative("A")
+console.log(list)
